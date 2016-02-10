@@ -79,7 +79,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="524" y="149" name="job_posts">
+<table x="537" y="156" name="job_posts">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -106,32 +106,23 @@
 <part>id</part>
 </key>
 </table>
-<table x="625" y="410" name="interviews">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="time_slots" row="id" />
-</row>
-<row name="time_slot_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="application_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="applications" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="1059" y="404" name="time_slots">
+<table x="858" y="456" name="interview_time_slots">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="time" null="1" autoincrement="0">
+<row name="start_time" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="end_time" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="job_post_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="job_posts" row="id" />
+</row>
+<row name="application_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="applications" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
