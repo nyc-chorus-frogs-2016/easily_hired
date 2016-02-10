@@ -1,0 +1,33 @@
+<fieldset>
+
+  <legend>Job Info:</legend>
+
+<table>
+
+  <tr>
+    <td>Title:</td>
+    <td><%= @job_post.title %></td>
+  </tr>
+
+  <tr>
+    <td>Description:</td>
+    <td><%= @job_post.description %></td>
+  </tr>
+
+  <tr>
+    <td>Location:</td>
+    <td><%= @job_post.location %></td>
+  </tr>
+
+</table>
+
+  <div>
+    <% if @job_post.not_applied?(current_user.id) %>
+      <%= form_tag job_post_applications_path(@job_post) %>
+      <%= submit_tag 'Apply' %>
+    <% else %>
+      <p>Already Applied</p>
+    <% end %>
+  </div>
+
+</fieldset>

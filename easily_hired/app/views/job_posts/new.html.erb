@@ -1,0 +1,36 @@
+<%= form_for @job_post do |f| %>
+<fieldset>
+
+  <legend>Create a job post:</legend>
+
+<table>
+
+  <tr>
+    <td><%= f.label :title %></td>
+    <td><%= f.text_field :title %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :description %></td>
+    <td><%= f.text_area :description, cols: "50", rows: "10" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :location %></td>
+    <td><%= f.text_field :location %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :is_active, 'Is it Active?' %></td>
+    <td><%= f.check_box :is_active, checked: false %></td>
+  </tr>
+
+</table>
+
+  <div>
+    <%= submit_tag 'Create Job Post' %>
+  </div>
+
+</fieldset>
+
+<% end %>

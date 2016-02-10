@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
+  get 'job_posts/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resources :job_posts, only: [:index, :show, :new, :create] do
+    collection do
+      get 'created'
+      get 'applied'
+    end
+    resources :applications, only: [:create]
+  end
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

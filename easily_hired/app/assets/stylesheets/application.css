@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+body  {
+  background-image: url("http://p1.pichost.me/i/38/1615285.jpg");
+  font-family: sans-serif;
+  margin-left: 2%;
+  margin-right: 2%
+}
+
+#website-name {
+  float: left;
+  font-variant: small-caps;
+  font-style: italic;
+  color: #000445;
+  font-size: 2.5em;
+}
+
+hr {
+  margin: 0;
+  clear: both;
+}
+
+#login-bar {
+  float: right;
+  margin-top: 40px;
+}
+
+#find-a-job, #post-a-job, #applied-jobs, #created-jobs {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0;
+}
+
+#find-a-job {
+  background-color: #d8e5e9;
+}
+
+#post-a-job {
+  background-color: #faebd7;
+}
+
+#applied-jobs {
+  background-color: #efface
+}
+
+#created-jobs {
+ background-color: #c9bdc7
+}

@@ -8,7 +8,26 @@
 </head>
 <body>
 
-<%= yield %>
+  <h1 id="website-name">Easily Hired</h1>
+  <h3 id="login-bar">
+    <% if current_user %>
+       Welcome <%= current_user.first_name %> |
+       <%= link_to 'Log out', session_path, method: :delete %> |
+    <% else %>
+       <%= link_to 'Log in', new_session_path %> | <%= link_to 'Register', new_user_path %> |
+    <% end %>
+    <%= link_to 'Home', job_posts_path %>
+  </h3>
+  <hr>
+    <h3 id="find-a-job">Find A Job</h3>
+    <h3 id="post-a-job"><%= link_to 'Post A Job', new_job_post_path %></h3>
+    <h3 id="applied-jobs"><%= link_to 'Jobs Applied By You', new_job_post_path %></h3>
+    <h3 id="created-jobs"><%= link_to 'Jobs Created By You', new_job_post_path %></h3>
+  <hr>
+
+  <%= yield %>
+
+
 
 </body>
 </html>
