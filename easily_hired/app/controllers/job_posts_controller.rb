@@ -11,6 +11,10 @@ class JobPostsController < ApplicationController
   def update
     @job_post = JobPost.find_by(id: params[:id])
     @job_post.update(job_post_params)
+    @job_post.tags = []
+    params[:tags].split(" ").each do |tag|
+      @job_post.tags << Tag.find_or_create_by(name: tag)
+    end
     redirect_to job_post_path(@job_post)
   end
 
@@ -24,9 +28,11 @@ class JobPostsController < ApplicationController
 
   def create
     @job_post = JobPost.new(job_post_params)
-    if @job_post.save
-      redirect_to job_posts_path
+    @job_post.save
+    params[:tags].split(" ").each do |tag|
+      @job_post.tags << Tag.find_or_create_by(name: tag)
     end
+    redirect_to job_posts_path
   end
 
   def created
@@ -41,10 +47,6 @@ class JobPostsController < ApplicationController
     @job_post = JobPost.find(params[:id])
     @job_post.destroy
     redirect_to job_posts_path
-  end
-
-  def find
-
   end
 
   private

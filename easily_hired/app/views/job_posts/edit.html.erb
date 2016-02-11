@@ -26,6 +26,11 @@
   </tr>
 
   <tr>
+    <td><%= label_tag :tags, 'Tags (Seperated By Space)' %></td>
+    <td><%= text_area_tag :tags, value = @job_post.tags_toS, cols: "50", rows: "5"%></td>
+  </tr>
+
+  <tr>
     <td><%= f.hidden_field :creator_id, value: current_user.id %></td>
   </tr>
 
@@ -38,3 +43,4 @@
 </fieldset>
 
 <% end %>
+
