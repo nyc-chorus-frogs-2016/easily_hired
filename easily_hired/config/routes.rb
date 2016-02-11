@@ -8,14 +8,15 @@ Rails.application.routes.draw do
     collection do
       get 'created'
       get 'applied'
-      get 'find'
     end
     resources :applications, only: [:create]
   end
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   resources :tags, only: [] do
-    get 'find'
+    collection do
+      get 'find'
+    end
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

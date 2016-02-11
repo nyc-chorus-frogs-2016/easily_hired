@@ -1,0 +1,14 @@
+<%= form_tag find_tags_path, method: :get, id: "search-bar" do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<div>
+  <ul>
+  <% @found_job_posts.each do |job_post| %>
+    <li><%= link_to job_post.title, job_post_path(job_post) %></li>
+  <% end %>
+  </ul>
+</div>
