@@ -9,4 +9,8 @@ class JobPost < ActiveRecord::Base
     Application.where("applicant_id = ? AND job_post_id = ?", user_id, self.id).empty?
   end
 
+  def creator?(user_id)
+    self.creator_id == user_id
+  end
+
 end

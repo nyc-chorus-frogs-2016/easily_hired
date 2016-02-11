@@ -1,4 +1,9 @@
-
+<%= form_tag find_job_posts_path, id: "search-bar" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
 
 <div>
   <ul>

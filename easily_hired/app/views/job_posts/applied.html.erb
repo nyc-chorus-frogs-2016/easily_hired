@@ -1,0 +1,7 @@
+<div>
+  <ul>
+  <% @applied_job_posts.each do |job_post| %>
+    <li><%= link_to job_post.title, job_post_path(job_post) %></li>
+  <% end %>
+  </ul>
+</div>
